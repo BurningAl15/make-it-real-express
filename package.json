@@ -1,0 +1,28 @@
+{
+  "name": "make-it-real-express",
+  "version": "0.0.1",
+  "description": "Make It Real express expercises",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BurningAl15/make-it-real-express.git"
+  },
+  "keywords": [
+    "nodeJS",
+    "Express"
+  ],
+  "author": "Aldhair Vera <aldhairvera15@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BurningAl15/make-it-real-express/issues"
+  },
+  "homepage": "https://github.com/BurningAl15/make-it-real-express#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
