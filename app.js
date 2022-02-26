@@ -3,13 +3,8 @@ const server=express();
 
 const PORT=3000;
 
-const capitalize=(str)=>{
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-server.get('/makers/:nombre',(req,res)=>{
-  let {nombre}=req.params;
-  nombre=capitalize(nombre);
+server.get('/',(req,res)=>{
+  let {nombre}=req.query;
   res.send(`<h1>Hola ${nombre}!</h1>`);
 });
 
