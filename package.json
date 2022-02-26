@@ -2,7 +2,7 @@
   "name": "make-it-real-express",
   "version": "0.0.1",
   "description": "Make It Real express expercises",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
