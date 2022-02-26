@@ -3,14 +3,20 @@ const server=express();
 
 const PORT=3000;
 
-const capitalize=(str)=>{
-  return str.charAt(0).toUpperCase() + str.slice(1);
+const isOdd=(number)=>{
+  return number%2===0?'Soy Par!':'Soy Impar!';
 }
 
-server.get('/makers/:nombre',(req,res)=>{
-  let {nombre}=req.params;
-  nombre=capitalize(nombre);
-  res.send(`<h1>Hola ${nombre}!</h1>`);
+const numberCall=()=>{
+  const elements=[];
+  for(let i=1;i<=50;i++)
+    elements.push(`<p>${i} ${isOdd(i)}</p>`)
+  return elements.join('\n')
+}
+
+server.get('/',(req,res)=>{
+  const value=numberCall();
+  res.send(`${value}`);
 });
 
 server.listen(PORT,()=>console.log(`Listening on port ${PORT}`))
