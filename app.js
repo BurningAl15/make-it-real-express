@@ -3,20 +3,19 @@ const server=express();
 
 const PORT=3000;
 
-const isOdd=(number)=>{
-  return number%2===0?'Soy Par!':'Soy Impar!';
-}
+server.set('view engine','pug');
+server.set('views','views');
 
-const numberCall=()=>{
-  const elements=[];
-  for(let i=1;i<=50;i++)
-    elements.push(`<p>${i} ${isOdd(i)}</p>`)
-  return elements.join('\n')
-}
+server.use("/static", express.static('public'));
+server.use(express.urlencoded());
+server.use(express.json());
 
 server.get('/',(req,res)=>{
-  const value=numberCall();
-  res.send(`${value}`);
+  res.render('index')
 });
+
+server.post('/',(req,res)=>{
+  res.send(`<h1>Hola ${req.body.name}!</h1>`);  
+})
 
 server.listen(PORT,()=>console.log(`Listening on port ${PORT}`))
